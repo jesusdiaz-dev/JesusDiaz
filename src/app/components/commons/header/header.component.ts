@@ -70,7 +70,7 @@ export class HeaderComponent implements OnInit{
   }
 
   // method to determined the change navbar styles (navbar fixed animation and height change)
-  @HostListener('window:scroll', ['$event']) onScroll() {
+  @HostListener('window:scroll') onScroll() {
     if (window.scrollY > 100) {
       this.navbarfixed = true;
     }

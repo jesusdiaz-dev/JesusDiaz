@@ -3,7 +3,7 @@ import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
 import { provideAnimations } from '@angular/platform-browser/animations';
-import { HttpClient, provideHttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientJsonpModule, provideHttpClient, withJsonpSupport } from '@angular/common/http';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 
@@ -26,9 +26,11 @@ function HttpLoaderFactory(http: HttpClient) {
 export const appConfig: ApplicationConfig = {
   providers: [provideRouter(routes), 
     provideAnimations(),
-    provideHttpClient(),
+    provideHttpClient(
+      withJsonpSupport() // ~ revisar si no es necesario, quitar si no se usa.
+    ),
     importProvidersFrom([
-      HttpClientModule,
+      // HttpClientJsonpModule, // v18 is deprecated, now in provideHttpClient we use the function withJsonSupport
       TranslateModule.forRoot(provideTranslation())
     ]),
   ]
