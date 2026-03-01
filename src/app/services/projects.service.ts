@@ -137,10 +137,10 @@ export class ProjectsService {
       }
       ,
     },
-    
+
 
     {
-      id: "8", name: { en: "Jesus Diaz Portfolio ", es: "Portfolio de Jesus Diaz" }, "img": "assets/projects/Portfolio.jpg", technologies: [  "Angular", "PrimeNG","CSS" , "HTML"]
+      id: "8", name: { en: "Jesus Diaz Portfolio ", es: "Portfolio de Jesus Diaz" }, "img": "assets/projects/Portfolio.jpg", technologies: ["Angular", "PrimeNG", "CSS", "HTML"]
       ,
       description:
       {

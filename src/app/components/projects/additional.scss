@@ -48,7 +48,7 @@ $padding-para-carrosel-tablet : 10px;
     .carousel-prev-icon:hover {
         color: $primary-700;
     }
-    
+
 
     //no recuerdo
     .p-carousel-indicators {
@@ -85,13 +85,17 @@ $padding-para-carrosel-tablet : 10px;
     left: 0px;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.9);
     color: white;
-    display: none;
+    display: flex;
+    opacity: 0;
+    visibility: hidden;
     justify-content: center;
     align-items: center;
     text-align: center;
     cursor: pointer;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+    transition-delay: 0.1s; // The requested delay
 
     @include tablet {
         width: calc(100% - $padding-para-carrosel-tablet *2);

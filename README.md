@@ -1,27 +1,45 @@
 # JesusDiazWeb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.10.
+A modern, responsive personal portfolio website built with Angular 18, featuring a clean design with Material Design components and smooth animations.
 
-## Development server
+## 🚀 Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- **Modern Angular 18** - Built with the latest Angular framework
+- **Material Design** - Beautiful UI components with Angular Material
+- **Responsive Design** - Works seamlessly on all devices
+- **Internationalization** - Multi-language support with ngx-translate
+- **Smooth Animations** - AOS (Animate On Scroll) library for engaging interactions
+- **Contact Form** - Functional contact form using EmailJS
+- **PrimeNG Components** - Additional UI components for enhanced user experience
+- **Bootstrap Integration** - Responsive grid system and utilities
 
-## Code scaffolding
+## 🛠️ Tech Stack
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Frontend**: Angular 18, TypeScript, SCSS
+- **UI Framework**: Angular Material, PrimeNG, Bootstrap 5
+- **Animations**: AOS (Animate On Scroll)
+- **Internationalization**: ngx-translate
+- **Email Service**: EmailJS
+- **Build Tools**: Angular CLI, Webpack
 
-## Build
+## 📁 Project Structure
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+src/
+├── app/
+│   ├── components/     # Reusable UI components
+│   ├── models/         # Data models and interfaces
+│   └── services/       # Application services
+├── assets/             # Static assets (images, etc.)
+└── styles.scss         # Global styles
+```
 
-## Running unit tests
+## 🔧 Configuration
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Angular Material**: Indigo Pink theme
+- **Fonts**: Roboto and Raleway from Google Fonts
+- **Build Budgets**: Optimized for performance (500KB initial, 2MB max)
 
-## Running end-to-end tests
+## 📄 License
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This project is private.

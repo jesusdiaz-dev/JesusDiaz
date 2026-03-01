@@ -34,13 +34,14 @@
 }
 
 //it is used in both images, carrousel and grid 
-$border-for-img-card:10px;
+$border-for-img-card: 10px;
 
 .grid-card-container {
     position: relative;
     width: 23%;
     margin: 1rem 0;
     height: clamp(5rem, 1.571rem + 7.143vw, 8rem);
+    cursor: pointer;
 
     @include desktop {
         height: 150px;
@@ -75,6 +76,7 @@ $padding-for-carrousel-tablet : 10px;
     height: clamp(6rem, -0.667rem + 35.556vw, 10rem);
     position: relative;
     display: flex;
+
     @include tablet {
         height: clamp(6rem, -0.667rem + 22.222vw, 10rem);
     }
@@ -91,6 +93,7 @@ $padding-for-carrousel-tablet : 10px;
         padding: $padding-for-carrousel-tablet;
         border-radius: $border-for-img-card + 5px;
     }
+
     @include tablet {
         border-radius: $border-for-img-card + 10px;
     }
@@ -99,7 +102,8 @@ $padding-for-carrousel-tablet : 10px;
 
 .hover-info.show,
 :host ::ng-deep .hover-info.show {
-    display: block;
+    opacity: 1;
+    visibility: visible;
     border-radius: $border-for-img-card;
     /* Muestra al hacer hover */
 }
@@ -110,20 +114,24 @@ $padding-for-carrousel-tablet : 10px;
     font-size: 0.6em;
     margin: 0;
     text-align: center;
-    padding : 0 0.5rem;
+    padding: 0 0.5rem;
     text-overflow: ellipsis;
     overflow: hidden;
     display: -webkit-box;
-        -webkit-line-clamp: 2; /* Número máximo de líneas */
-        -webkit-box-orient: vertical;
-    @include tablet{
+    -webkit-line-clamp: 2;
+    /* Número máximo de líneas */
+    -webkit-box-orient: vertical;
+
+    @include tablet {
         font-size: 0.7rem;
     }
-    @include laptop{
+
+    @include laptop {
         font-size: 0.8rem;
-        
+
     }
-    @include desktop{
+
+    @include desktop {
         margin-top: 0.5rem;
         font-size: 1rem;
     }

@@ -1,0 +1,52 @@
+@import "../../../media-queries";
+@import "../../../styles.scss";
+
+#work-experience {
+    width: 100%;
+    background-color: #f9f9f9; // Subtle difference from some-technologies (white)
+    padding: 100px 0 100px 0;
+}
+
+.work-experience-container {
+    width: min(80%, 1440px);
+    margin: auto;
+    text-align: center;
+}
+
+h2 {
+    font: $mobh2;
+    color: rgb(0, 0, 0);
+    font-size: clamp(1rem, 0.714rem + 1.429vw, 2rem);
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.188);
+    margin: 3rem auto;
+}
+
+.content {
+    max-width: 800px;
+    margin: 0 auto;
+
+    p {
+        font: $mob-h3;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+        color: $acromatic-400;
+
+        @include tablet {
+            font-size: 1.25rem;
+        }
+    }
+
+    .highlight {
+        font: $mob-h3-bold;
+        color: $primary-600;
+        margin-top: 2rem;
+        padding: 1.5rem;
+        background: $primary-50;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+
+        @include tablet {
+            font-size: 1.35rem;
+        }
+    }
+}

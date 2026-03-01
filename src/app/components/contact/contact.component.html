@@ -1,55 +1,60 @@
 <section id="contact">
-    <h2>{{"home.contact.title" | translate}}</h2>
+    <h2 data-aos="fade-up">{{"home.contact.title" | translate}}</h2>
 
-    <form (ngSubmit)="send()" [formGroup]="this.form" class="form-container">
+    <form (ngSubmit)="send()" [formGroup]="this.form" class="form-container" data-aos="fade-up">
         <!-- People's name -->
-        <div class="mt-3 custom-input">
+        <div class="custom-input">
             <label class="form-label">{{"home.contact.name" | translate}}</label>
             <input type="text" formControlName="from_name" required class="form-control"
                 [ngClass]="{ 'is-invalid': hasErrors('from_name', 'required') }">
         </div>
-        <div *ngIf="hasErrors('from_name', 'required')" class="warning-text">{{ "home.contact.error_message.name_required"|translate}}</div>
+        <div *ngIf="hasErrors('from_name', 'required')" class="warning-text">{{
+            "home.contact.error_message.name_required"|translate}}</div>
 
         <!-- People's email -->
-        <div class="mt-3 custom-input">
+        <div class="custom-input">
             <label class="form-label">{{"home.contact.email_address" | translate}}</label>
-            <input type="email" formControlName="from_email" required email class="form-control" 
-            [ngClass]="{   'is-invalid':   
+            <input type="email" formControlName="from_email" required email class="form-control" [ngClass]="{   'is-invalid':   
             hasErrors('from_email', 'required') || 
                                                     hasErrors('from_email', 'email') }">
         </div>
-        <div *ngIf="hasErrors('from_email', 'required')" class="warning-text">{{ "home.contact.error_message.email_required"|translate}}</div>
+        <div *ngIf="hasErrors('from_email', 'required')" class="warning-text">{{
+            "home.contact.error_message.email_required"|translate}}</div>
         <div *ngIf="hasErrors('from_email', 'email')" class="warning-text">debe ingresar un mail valido</div>
 
 
-        <!-- Subject -->    
-        <div class="mt-3 custom-input">
+        <!-- Subject -->
+        <div class="custom-input">
             <label class="form-label">{{"home.contact.subject" | translate}}</label>
             <input type="text" formControlName="subject" required class="form-control"
                 [ngClass]="{    'is-invalid':   hasErrors('subject', 'required') }">
         </div>
-        <div *ngIf="hasErrors('subject', 'required')" class="warning-text">{{ "home.contact.error_message.subject_required"|translate}}
+        <div *ngIf="hasErrors('subject', 'required')" class="warning-text">{{
+            "home.contact.error_message.subject_required"|translate}}
         </div>
 
         <!-- Message -->
-        <div class="mt-3 mb-3 custom-input">
+        <div class="custom-input">
             <label class="form-label">{{"home.contact.message" | translate}}</label>
             <textarea rows="4" formControlName="message" required class="form-control"
                 [ngClass]="{    'is-invalid':   hasErrors('message', 'required') }">
 
-        </textarea >
-            <!-- <div>{{"home.contact.send_to_modal.success" | translate}}</div> -->
-            <div *ngIf="hasErrors('message', 'required')" class="warning-text">{{ "home.contact.error_message.message_required"|translate}}</div>
+        </textarea>
+            <div *ngIf="hasErrors('message', 'required')" class="warning-text">{{
+                "home.contact.error_message.message_required"|translate}}</div>
         </div>
 
         @if (success_message) {
-            <app-custom-modal custom_message='{{"home.contact.send_to_modal.success" | translate}}' (click)="closeModal()" ></app-custom-modal>
+        <app-custom-modal custom_message='{{"home.contact.send_to_modal.success" | translate}}'
+            (click)="closeModal()"></app-custom-modal>
         }
         @if (there_was_an_error) {
-            <app-custom-modal custom_message='{{"home.contact.send_to_modal.error" | translate}}' (click)="closeModal()" ></app-custom-modal>
+        <app-custom-modal custom_message='{{"home.contact.send_to_modal.error" | translate}}'
+            (click)="closeModal()"></app-custom-modal>
         }
-        
-        <button [ngClass]="{'primary_button_disabled' : !this.form.valid}" [disabled]="!this.form.valid" type="submit" class="primary-button">{{"home.contact.btn_send" | translate}}</button>
+
+        <button [ngClass]="{'primary_button_disabled' : !this.form.valid}" [disabled]="!this.form.valid" type="submit"
+            class="primary-button">{{"home.contact.btn_send" | translate}}</button>
     </form>
 
 </section>

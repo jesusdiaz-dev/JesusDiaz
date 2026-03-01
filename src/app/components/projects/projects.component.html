@@ -1,17 +1,18 @@
 <section id="projects">
     <div class="projects-container">
-        <h2>{{"home.projects.title" | translate}}</h2>
-        <div class="carousel-container">
+        <h2 data-aos="fade-up">{{"home.projects.title" | translate}}</h2>
+        <div class="carousel-container" data-aos="fade-up">
             <p-carousel [value]="projects" [circular]="true" [autoplayInterval]=3000
                 [responsiveOptions]="responsiveOptions">
 
                 <ng-template let-project pTemplate="item">
-                    <div class="card-container" (mouseover)="showOverlay(project.id)" (mouseleave)="hideOverlay()" (click)="navigateToDetail(project.id)">
+                    <div class="card-container" (mouseover)="showOverlay(project.id)" (mouseleave)="hideOverlay()"
+                        (click)="navigateToDetail(project.id)">
 
-                        <img src="{{project.img}}"  alt="{{project.name}}" class="img-card" />
+                        <img src="{{project.img}}" alt="{{project.name}}" class="img-card" />
 
                         <div class="hover-info" [class.show]="showOverlayIndex == project.id">
-                            
+
                             <p>
                                 {{lang === 'es' ? project.name.es : project.name.en}}
                             </p>
@@ -19,7 +20,8 @@
                                 <!-- iterate over all technologies of each project -->
                                 @for (tech of project.technologies ; track $index) {
                                 <div class="tech-img-container">
-                                    <img class="technology-img-of-carousel" src="assets/some-technologies/{{tech}}.png" alt="">
+                                    <img class="technology-img-of-carousel" src="assets/some-technologies/{{tech}}.png"
+                                        alt="">
                                 </div>
                                 }
                             </div>
@@ -34,18 +36,19 @@
         <div class="grid-projects-container">
 
             @for (project of projects; track project.name ; let i = $index) {
-            <div class="grid-card-container" (mouseover)="showOverlay(i)" (mouseleave)="hideOverlay()" (click)="navigateToDetail(project.id)" >
+            <div class="grid-card-container" (mouseover)="showOverlay(i)" (mouseleave)="hideOverlay()"
+                (click)="navigateToDetail(project.id)" data-aos="fade-up" [attr.data-aos-delay]="i * 300">
 
                 <img src="{{project.img}}" alt="{{lang === 'es' ? project.name.es : project.name.en}}">
 
-                <div class="hover-info" [class.show]="showOverlayIndex === i" >
+                <div class="hover-info" [class.show]="showOverlayIndex === i">
                     <p>
                         {{lang === 'es' ? project.name.es : project.name.en}}
                     </p>
-                    <div class="technologies-container" >
+                    <div class="technologies-container">
                         <!-- iterate over all technologies of each project -->
                         @for (tech of project.technologies ; track $index) {
-                        <div class="tech-img-container" >
+                        <div class="tech-img-container">
                             <img src="assets/some-technologies/{{tech}}.png" alt="">
                         </div>
                         }

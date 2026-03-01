@@ -2,6 +2,7 @@
     "header.desktop_nav.home": "Inicio",
     "header": {
         "desktop_nav": {
+            "language_label": "Idioma ",
             "btn_language_selector": "elige el idioma que deseas utilizar",
             "home": "Inicio",
             "projects": "Proyectos",
@@ -13,11 +14,9 @@
         "hero": {
             "greeting": {
                 "hi": "Hola,",
-                "my_name" : "Mi nombre es Jesús",
+                "my_name": "Mi nombre es Jesús",
                 "and": " y soy",
-                "fullstack": "Desarrollador Web FullStack",
-                "&": "y",
-                "ux-ui": "Diseñador UX-UI"
+                "fullstack": "Desarrollador Web FullStack"
             },
             "btn_contact": "Contacto",
             "btn_download_cv": "Descargar CV"
@@ -32,6 +31,12 @@
         "some_technologies": {
             "title": "Algunas de las tecnologías con las que trabajo son..."
         },
+        "work_experience": {
+            "title": "Experiencia Actual",
+            "popey_description": "Actualmente trabajo como Desarrollador Full Stack Angular + PHP en Popey, una empresa Argentina.",
+            "erp_project": "Estamos desarrollando un ERP integral para potenciar la gestión empresarial.",
+            "location_status": "Actualmente resido en España y estoy abierto a nuevas oportunidades y desafíos profesionales."
+        },
         "projects": {
             "title": "Proyectos",
             "btn_see_more": "ver más"
@@ -43,20 +48,17 @@
             "subject": "Asunto",
             "message": "Mensaje",
             "btn_send": "Enviar",
-            "error_message": 
-                {
-                    "name_required": "Por favor, introduce tu nombre",
-                    "email_required": "Por favor, introduce tu correo electrónico",
-                    "email_format": "Por favor, introduce un mail válido",
-                    "subject_required": "Por favor, introduce un asunto",
-                    "message_required": "Por favor, introduce tu mensaje"
-                },
-                "send_to_modal":
-                {
-                    "success": "Se ha enviado su mensaje exitosamente!",
-                    "error":" `Lo siento, hubo un error. \n Intentelo mas tarde " 
-                } 
-
+            "error_message": {
+                "name_required": "Por favor, introduce tu nombre",
+                "email_required": "Por favor, introduce tu correo electrónico",
+                "email_format": "Por favor, introduce un mail válido",
+                "subject_required": "Por favor, introduce un asunto",
+                "message_required": "Por favor, introduce tu mensaje"
+            },
+            "send_to_modal": {
+                "success": "Se ha enviado su mensaje exitosamente!",
+                "error": " `Lo siento, hubo un error. \n Intentelo mas tarde "
+            }
         }
     },
     "footer": {
@@ -71,18 +73,18 @@
             "title": "Redes"
         },
         "address": {
-            "title": "Dirección"
+            "title": "Dirección",
+            "address": "Barcelona, España"
         },
         "copyright": {
-            "title": "© 2024 Jesus Diaz Dev. Todos los derechos reservados."
+            "title": "Jesus Diaz Dev. Todos los derechos reservados."
         }
     },
-    "projects_details":{
-        "back" : "Regresar",
-        "breadcrumb" : "Proyectos",
+    "projects_details": {
+        "back": "Regresar",
+        "breadcrumb": "Proyectos",
         "technologies_employed": "Tecnologías utilizadas: ",
         "description": "Descripción: ",
         "visit_the_proyect": "visita el proyecto en: "
-
     }
 }

@@ -24,14 +24,13 @@ function HttpLoaderFactory(http: HttpClient) {
 }
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes), 
-    provideAnimations(),
-    provideHttpClient(
-      withJsonpSupport() // ~ revisar si no es necesario, quitar si no se usa.
-    ),
-    importProvidersFrom([
-      // HttpClientJsonpModule, // v18 is deprecated, now in provideHttpClient we use the function withJsonSupport
-      TranslateModule.forRoot(provideTranslation())
-    ]),
+  providers: [provideRouter(routes),
+  provideAnimations(),
+  provideHttpClient(
+    withJsonpSupport() // ~ revisar si no es necesario, quitar si no se usa.
+  ),
+  importProvidersFrom([
+    TranslateModule.forRoot(provideTranslation())
+  ]),
   ]
 };

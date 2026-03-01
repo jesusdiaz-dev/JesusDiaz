@@ -56,7 +56,8 @@ mat-toolbar {
 
   .anchor_jesus-diaz-developer {
     order: 1;
-    @include laptop{
+
+    @include laptop {
       order: 0;
     }
   }
@@ -69,9 +70,10 @@ mat-toolbar {
     width: 60%;
     order: 0;
 
-    @include laptop{
+    @include laptop {
       justify-content: space-between;
     }
+
     @include desktop {
       width: 40%;
     }
@@ -123,16 +125,17 @@ mat-toolbar {
       // background-color: aqua;
       display: flex;
       align-items: center;
+
       mat-menu #ppp {
         display: flex !important;
         flex-direction: column !important;
       }
-    
+
       .aa {
         width: 1rem;
         height: 1rem;
       }
-    
+
     }
   }
 
@@ -251,3 +254,13 @@ div.sidenav-menu-button {
   height: 75px;
 }
 
+.language_label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (max-width: 1024px) {
+    display: none;
+  }
+
+}

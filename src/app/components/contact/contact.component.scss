@@ -1,41 +1,102 @@
 @import '../../../styles.scss';
 
-#contact{
+#contact {
     width: 80%;
     margin-bottom: 100px;
     margin: 30px auto 100px;
     max-width: 1440px;
 }
 
-.form-container{
+.form-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 100%;
     margin: auto;
-    padding: 0 10% 0 10%;
-    @include tablet{
+    padding: 2rem 10%;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+
+    @include tablet {
         max-width: 90%;
-    }
-    @include laptop{
-        max-width: 80%;
-    }
-    @include desktop{
-        max-width: 50%;
+        padding: 3rem 10%;
     }
 
-    .custom-input{
+    @include laptop {
+        // max-width: 70%;
+        padding: 3rem 7%;
+    }
+
+    @include desktop {
+        max-width: 35%;
+        padding: 3rem 4%;
+    }
+
+    .custom-input {
         width: 100%;
+        margin-bottom: 1.5rem;
+
+        .form-label {
+            font-weight: 500;
+            color: $acromatic-400;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+
+        .form-control {
+            border: 1.5px solid #e1e1e1;
+            border-radius: 8px;
+            padding: 0.4rem 1rem;
+            font-family: inherit;
+            color: $acromatic-600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            background-color: #fafafa;
+
+            &:focus {
+                background-color: #ffffff;
+                border-color: $primary-400;
+                box-shadow: 0 0 0 4px rgba($primary-400, 0.1);
+                outline: none;
+            }
+
+            &.is-invalid {
+                border-color: #ff4d4f;
+                background-color: #fff2f0;
+
+                &:focus {
+                    box-shadow: 0 0 0 4px rgba(#ff4d4f, 0.1);
+                }
+            }
+        }
+
+        &:focus-within .form-label {
+            color: $primary-500;
+        }
     }
-    .form-control{
-        border: 1px solid rgb(180, 180, 180);
-        border-radius: 3px;
-    }
-    .warning-text{
-        color: red;
+
+    .warning-text {
+        color: #ff4d4f;
+        font-size: 0.8rem;
+        margin-top: -1rem;
+        margin-bottom: 1rem;
         display: block;
         text-align: left;
         width: 100%;
+        font-weight: 500;
+    }
+
+    .primary-button {
+        margin-top: 1rem;
+        width: auto;
+        min-width: 150px;
+        padding: 0.4rem 1rem;
+        font-size: 1rem;
+        font-weight: 600;
+        border-radius: 8px;
+        align-self: center;
     }
 }

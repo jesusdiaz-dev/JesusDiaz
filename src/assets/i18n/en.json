@@ -1,85 +1,88 @@
 {
-    "header.desktop_nav.home" : "Home",
-    "header":{
+    "header.desktop_nav.home": "Home",
+    "header": {
         "desktop_nav": {
+            "language_label": "language ",
             "btn_language_selector": "choose the language you want to use",
-            "home" : "Home",
+            "home": "Home",
             "projects": "Projects",
             "technologies": "Technologies",
             "about": "About"
         }
     },
-    "home":{
-        "hero":{
-            "greeting":{
+    "home": {
+        "hero": {
+            "greeting": {
                 "hi": "Hi,",
-                "my_name" : "My name is Jesus",
+                "my_name": "My name is Jesus",
                 "and": " and i’m",
-                "fullstack": "FullStack Web Developer",
-                "&": "&",
-                "ux-ui": "UX-UI Dessigner"
-            } ,
+                "fullstack": "FullStack Web Developer"
+            },
             "btn_contact": "Contact",
             "btn_download_cv": "Download CV"
         },
-        "about":{
+        "about": {
             "title": "Let me tell you something of me",
             "phrase_1": "Hello! How are you? My name is Jesús, and I am a Full Stack developer with experience in developing web applications from scratch to implementation.",
             "phrase_2": "Thanks to my university education, my focus goes beyond code: I have specialized studies in UX/UI that allow me to create pleasant and intuitive user experiences.",
             "phrase_3": "In my current role as an Angular Developer, I am dedicated to implementing efficient and attractive solutions for my clients, prioritizing user experience and personalized design.",
             "phrase_4": "Would you like to know more? Explore my portfolio and projects, and feel free to contact me through the form you'll find a little further down!"
-
         },
-        "some_technologies":{
+        "some_technologies": {
             "title": "Some of the technologies I work with are..."
         },
-        "projects":{
+        "work_experience": {
+            "title": "Current Experience",
+            "popey_description": "I am currently working as a Full Stack Angular + PHP Developer at Popey, an Argentine company.",
+            "erp_project": "We are developing an ERP system to enhance business management.",
+            "location_status": "I am currently residing in Spain and looking for new professional opportunities and challenges."
+        },
+        "projects": {
             "title": "Projects",
             "btn_see_more": "see more"
         },
-        "contact":{
-            "title":"Let's Contact",
+        "contact": {
+            "title": "Let's Contact",
             "name": "Name",
             "email_address": "Email address",
             "subject": "Subject",
             "message": "Message",
             "btn_send": "Send",
-            "error_message": 
-                {
-                    "name_required": "Please enter your name",
-                    "email_required": "Please enter your email address",
-                    "email_format": "Please enter a valid email",
-                    "subject_required": "Please enter a subject",
-                    "message_required": "Please enter your message"
-                },
-            "send_to_modal":
-                {
-                    "success": "Message sent successfully",
-                    "error":"There was an error, try again later"
-                } 
+            "error_message": {
+                "name_required": "Please enter your name",
+                "email_required": "Please enter your email address",
+                "email_format": "Please enter a valid email",
+                "subject_required": "Please enter a subject",
+                "message_required": "Please enter your message"
+            },
+            "send_to_modal": {
+                "success": "Message sent successfully",
+                "error": "There was an error, try again later"
+            }
         }
     },
-    "footer":{
-        "useful_links":{
+    "footer": {
+        "useful_links": {
             "title": "Useful Links",
             "home": "Home",
             "about": "About",
             "projects": "Projects",
             "contact": "Contact"
         },
-        "networks":{
-            "title":"Networks"
+        "networks": {
+            "title": "Networks"
         },
-        "address":{
-            "title":"Address"
+        "address": {
+            "title": "Address",
+            "address": "Barcelona, Spain"
         },
-        "copyright":{
-            "title": "© 2024 Jesus Diaz Dev. All rights reserved."
+        "copyright": {
+            "title": "Jesus Diaz Dev. All rights reserved."
         }
     },
-    "projects_details":{
-        "back" : "Back",
-        "breadcrumb" : "Projects",
+    "projects_details": {
+        "back": "Back",
+        "breadcrumb": "Projects",
         "technologies_employed": "Technologies Employed: ",
         "description": "Description: ",
         "visit_the_proyect": "visit the proyect on: "

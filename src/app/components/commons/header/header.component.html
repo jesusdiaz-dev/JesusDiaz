@@ -11,19 +11,23 @@
                 <ul>
                     <div class="sidenav-menu-button">
                         <mat-icon class="sidenav-icon">home</mat-icon>
-                        <li><a (click)="sidenav.toggle()" href="#home">{{"header.desktop_nav.home" | translate}}</a></li>
+                        <li><a (click)="sidenav.toggle()" href="#home">{{"header.desktop_nav.home" | translate}}</a>
+                        </li>
                     </div>
                     <div class="sidenav-menu-button">
                         <mat-icon class="sidenav-icon">source</mat-icon>
-                        <li><a (click)="sidenav.toggle()" href="#about">{{"header.desktop_nav.about" | translate}}</a></li>
+                        <li><a (click)="sidenav.toggle()" href="#about">{{"header.desktop_nav.about" | translate}}</a>
+                        </li>
                     </div>
                     <div class="sidenav-menu-button">
                         <mat-icon class="sidenav-icon">delete_forever</mat-icon>
-                        <li><a (click)="sidenav.toggle()" href="#projects">{{"header.desktop_nav.projects" | translate}}</a></li>
+                        <li><a (click)="sidenav.toggle()" href="#projects">{{"header.desktop_nav.projects" |
+                                translate}}</a></li>
                     </div>
                     <div class="sidenav-menu-button">
                         <mat-icon class="sidenav-icon">delete_forever</mat-icon>
-                        <li><a (click)="sidenav.toggle()" href="#projects">{{"header.desktop_nav.technologies" | translate}}</a></li>
+                        <li><a (click)="sidenav.toggle()" href="#projects">{{"header.desktop_nav.technologies" |
+                                translate}}</a></li>
                     </div>
                 </ul>
             </nav>
@@ -36,40 +40,44 @@
 
         <!-- Desktop Nav bar -->
         <mat-toolbar color="red" class="toolbar" (scroll)="onScroll()" [ngClass]="navbarfixed?'fixed':'no-fixed'">
-            
-                <button mat-icon-button class="hamburguer-menu" aria-label="Side Menu Button" (click)="sidenav.toggle()">
-                    <mat-icon>{{ menuOpened ? 'clear' : 'menu' }}</mat-icon>
-                </button>
-    
-                <a href="#hero" class="anchor_jesus-diaz-developer"><span class="jesus-diaz-developer">Jesus Diaz<span>Dev</span></span></a>
-    
-                <nav class="desktop-nav">
-                    <div class="language_selector_container" title="{{'header.desktop_nav.btn_language_selector'|translate}}" >
-                        <!-- <small>Idioma: </small> -->
-                        <button mat-icon-button [matMenuTriggerFor]="menu">
-                            @if(lang=='es'){
-                            <img src="../../../../assets/icons/argentina.png" alt="">
-                            }
-                            @else{
-                            <img src="../../../../assets/icons/estados-unidos.png" alt="">
-                            }
+
+            <button mat-icon-button class="hamburguer-menu" aria-label="Side Menu Button" (click)="sidenav.toggle()">
+                <mat-icon>{{ menuOpened ? 'clear' : 'menu' }}</mat-icon>
+            </button>
+
+            <a href="#hero" class="anchor_jesus-diaz-developer"><span class="jesus-diaz-developer">Jesus
+                    Diaz<span>Dev</span></span></a>
+
+            <nav class="desktop-nav">
+                <div class="language_label">{{"header.desktop_nav.language_label" | translate}}</div>
+                <div class="language_selector_container"
+                    title="{{'header.desktop_nav.btn_language_selector'|translate}}">
+                    <!-- <small>Idioma: </small> -->
+                    <button mat-icon-button [matMenuTriggerFor]="menu">
+                        @if(lang=='es'){
+                        <img src="../../../../assets/icons/argentina.png" alt="">
+                        }
+                        @else{
+                        <img src="../../../../assets/icons/estados-unidos.png" alt="">
+                        }
+                    </button>
+                    <mat-menu #menu="matMenu" id="ppp">
+                        <button mat-icon-button (click)="changeLang('es')">
+                            <img class="aa" src="../../../../assets/icons/argentina.png" alt="">
                         </button>
-                        <mat-menu #menu="matMenu" id="ppp">
-                            <button mat-icon-button (click)="changeLang('es')">
-                                <img class="aa" src="../../../../assets/icons/argentina.png" alt="">
-                            </button>
-                            <button mat-icon-button (click)="changeLang('en')">
-                                <img class="aa" src="../../../../assets/icons/estados-unidos.png" alt="">
-                            </button>
-                        </mat-menu>
-                    </div>
-                    <ul class="custom-ul">
-                        <li class="custom-li"><a href="#hero">{{"header.desktop_nav.home" | translate}}</a></li>
-                        <li class="custom-li"><a href="#projects">{{"header.desktop_nav.projects" | translate}}</a></li>
-                        <li class="custom-li"><a href="#some-technologies">{{"header.desktop_nav.technologies" | translate}}</a></li>
-                        <li class="custom-li"><a href="#about">{{"header.desktop_nav.about" | translate}}</a></li>
-                    </ul>
-                </nav>
+                        <button mat-icon-button (click)="changeLang('en')">
+                            <img class="aa" src="../../../../assets/icons/estados-unidos.png" alt="">
+                        </button>
+                    </mat-menu>
+                </div>
+                <ul class="custom-ul">
+                    <li class="custom-li"><a href="#hero">{{"header.desktop_nav.home" | translate}}</a></li>
+                    <li class="custom-li"><a href="#projects">{{"header.desktop_nav.projects" | translate}}</a></li>
+                    <li class="custom-li"><a href="#some-technologies">{{"header.desktop_nav.technologies" |
+                            translate}}</a></li>
+                    <li class="custom-li"><a href="#about">{{"header.desktop_nav.about" | translate}}</a></li>
+                </ul>
+            </nav>
         </mat-toolbar>
 
         <!-- Content  -->
