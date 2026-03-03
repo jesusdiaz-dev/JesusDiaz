@@ -12,8 +12,10 @@ export class CvService {
   _httpClient: HttpClient = inject(HttpClient);
 
   getCV(): Observable<CV> {
+    console.log('Getting CV...');
     return this._httpClient.get<CV>(this.BASE_URL_CV);
   }
 }
 
 
+  

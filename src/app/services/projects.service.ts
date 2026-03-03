@@ -8,7 +8,21 @@ export class ProjectsService {
 
   projects: ProjectDTO[] = [
     {
-      id: "1",
+      id: "1", name: { en: "Sector 7 Ecommerce", es: "Sector 7 Ecommerce" },
+      img: "assets/projects/sector7.jpg",
+      technologies: ["Angular", "CSS", "Java", "Spring"],
+      description:
+      {
+        es: ['Desarrollé el frontend de un E-commerce para Sector 7 Gamers utilizando Angular 18 y SCSS. Este proyecto marcó mi inicio como desarrollador freelance, permitiéndome perfeccionar habilidades en el manejo de estados de usuario, integración de APIs y despliegue con Docker. Me apasiona el ecosistema de Angular y los desafíos de arquitectura que propone.'],
+        en: ['I developed the frontend for a Sector 7 Gamers e-commerce platform using Angular 18 and SCSS. This project marked my debut as a freelance developer, allowing me to hone my skills in user state management, API integration, and deployment with Docker. I am deeply passionate about the Angular ecosystem and the architectural challenges it presents.']
+      },
+
+      links: {
+        "sector7gamers.com.ar": "https://sector7gamers.com.ar/",
+      }
+    },
+    {
+      id: "2",
       name:
       {
         en: "Restful API for Scooters",
@@ -27,7 +41,7 @@ export class ProjectsService {
       ,
     },
 
-    {
+    /* {
       id: "2", name: { en: "Higa-Hiemi Hospitals Cooperative", es: "Cooperativa de Hospitales Higa-Hiemi" },
       img: "assets/projects/Higa_Hiemi.jpg",
       technologies: ["React", "CSS", "Java", "Spring"],
@@ -41,7 +55,8 @@ export class ProjectsService {
         github: "https://github.com/JesusDiazDeveloper/Web1-TPE-Web-para-un-Musico-JessLB-",
         netlify: "https://web-para-un-artista.netlify.app/",
       }
-    },
+    }, */
+
     {
       id: "3",
       name:
