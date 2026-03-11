@@ -12,7 +12,7 @@ import { ProjectsComponent } from "../../projects/projects.component";
 import { SomeTechnologiesComponent } from "../../some-technologies/some-technologies.component";
 import { ContactComponent } from "../../contact/contact.component";
 import { FooterComponent } from "../footer/footer.component";
-import { CustomTranslateService } from '../../../services/custom-translate.service';
+import { CustomTranslateService } from '../../../services/custom-translate/custom-translate.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 
 @Component({
@@ -40,14 +40,14 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 })
 
 
-export class HeaderComponent implements OnInit{
+export class HeaderComponent implements OnInit {
 
   menuOpened: boolean = false;
   screenWidth: number;
   navbarfixed: boolean = false;
-  
+
   customTranslateService: CustomTranslateService = inject(CustomTranslateService);
-  lang !:string;
+  lang !: string;
 
   constructor() {
     // set screenWidth on page load
@@ -60,12 +60,12 @@ export class HeaderComponent implements OnInit{
 
   ngOnInit(): void {
     this.customTranslateService.getLangObservable().subscribe(
-      newLang=>this.lang=newLang
+      newLang => this.lang = newLang
     );
   }
 
   // Change the language for whole application
-  changeLang( newLang :string){
+  changeLang(newLang: string) {
     this.customTranslateService.changeLang(newLang);
   }
 

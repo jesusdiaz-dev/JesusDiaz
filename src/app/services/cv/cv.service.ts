@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, throwError } from 'rxjs';
 import { CV } from '../../models/CV';
 
 @Injectable({
@@ -12,7 +12,6 @@ export class CvService {
   _httpClient: HttpClient = inject(HttpClient);
 
   getCV(): Observable<CV> {
-    console.log('Getting CV...');
     return this._httpClient.get<CV>(this.BASE_URL_CV);
   }
 }

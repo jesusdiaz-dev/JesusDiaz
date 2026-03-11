@@ -17,7 +17,11 @@
                 </a>
                 <!-- TODO: put an spinner here -->
                 <a [href]="cvUrl">
-                    <button class="primary-button">{{ "home.hero.btn_download_cv" | translate}}</button>
+                    <button 
+                    [disabled]="cvLoadFailed"
+                    [title]="cvLoadFailed ? 'Lo siento, ocurrió un error al obtener el CV' : ''"
+                    class="primary-button"
+                    >{{ "home.hero.btn_download_cv" | translate}}</button>
                 </a>
             </div>
         </div>

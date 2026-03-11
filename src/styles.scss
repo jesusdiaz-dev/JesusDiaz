@@ -213,6 +213,11 @@ h4 {
   /* Mantén el gradiente original */
 }
 
+.primary-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .primary_button_disabled {
   background-image: linear-gradient(160deg, $primary-200 20%, $primary-300 150%);
   cursor: not-allowed;

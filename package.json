@@ -7,6 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:chrome": "ng test --browsers=ChromeHeadless",
+    "test:coverage": "ng test --browsers=ChromeHeadless --code-coverage",
     "cel": "ng serve --host=0.0.0.0"
   },
   "private": true,

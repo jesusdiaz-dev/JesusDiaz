@@ -14,10 +14,16 @@ export class HeroComponent   {
 
     _CvService = inject(CvService);
     cvUrl !: string;
+    cvLoadFailed : boolean = false;
     
     ngOnInit(): void {
-        this._CvService.getCV().subscribe(cv=>{
-            this.cvUrl = "https://drive.google.com/uc?export=download&id="+cv.url;
+        this._CvService.getCV().subscribe({
+            next: (cv) => {
+                this.cvUrl = "https://drive.google.com/uc?export=download&id="+cv.url;
+            },
+            error: (error) => {
+                this.cvLoadFailed = true;
+            }
         })
     }
 

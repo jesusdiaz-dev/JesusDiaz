@@ -3,7 +3,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { ContactServiceService } from '../../services/contact-service.service';
+import { ContactServiceService } from '../../services/contact/contact-service.service';
 import { CommonModule, JsonPipe, NgClass } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
 import { EmailJSResponseStatus } from '@emailjs/browser';

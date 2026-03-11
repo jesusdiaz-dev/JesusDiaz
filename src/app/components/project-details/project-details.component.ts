@@ -1,16 +1,16 @@
 import { Component, ElementRef, OnInit, ViewChild, inject } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectDTO } from '../../models/projects/projectDTO';
-import { ProjectsService } from '../../services/projects.service';
+import { ProjectsService } from '../../services/projects/projects.service';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatIconModule } from '@angular/material/icon';
-import { CustomTranslateService } from '../../services/custom-translate.service';
+import { CustomTranslateService } from '../../services/custom-translate/custom-translate.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-project-details',
   standalone: true,
-  imports: [TranslateModule,MatIconModule,CommonModule],
+  imports: [TranslateModule, MatIconModule, CommonModule],
   templateUrl: './project-details.component.html',
   styleUrl: './project-details.component.scss'
 })
@@ -20,7 +20,7 @@ export class ProjectDetailsComponent implements OnInit {
   projectId !: string;
   project !: ProjectDTO | null;
   projectService = inject(ProjectsService);
-  customTranslateService = inject (CustomTranslateService); 
+  customTranslateService = inject(CustomTranslateService);
   lang !: string;
 
   ngOnInit(): void {
@@ -28,14 +28,14 @@ export class ProjectDetailsComponent implements OnInit {
       this.projectId = params['id'];
       this.project = this.projectService.getById(params['id']);
 
-      this.customTranslateService.getLangObservable().subscribe(newLang=>{
+      this.customTranslateService.getLangObservable().subscribe(newLang => {
         this.lang = newLang;
       })
     })
   }
 
   @ViewChild('scrollElement') scrollElement!: ElementRef;
-  
+
   ngAfterViewInit(): void {
     this.scrollToTop();
   }
@@ -45,5 +45,5 @@ export class ProjectDetailsComponent implements OnInit {
       window.scrollTo({ top: 0, behavior: 'instant' });
     }
   }
-  
+
 }

@@ -4,9 +4,9 @@ import { TagModule } from 'primeng/tag';
 import { ProjectDTO } from '../../models/projects/projectDTO';
 import { PrimaryButtonComponent } from "../commons/buttons/primary-button/primary-button.component";
 import { Router } from '@angular/router';
-import { ProjectsService } from '../../services/projects.service';
+import { ProjectsService } from '../../services/projects/projects.service';
 import { TranslateModule } from '@ngx-translate/core';
-import { CustomTranslateService } from '../../services/custom-translate.service';
+import { CustomTranslateService } from '../../services/custom-translate/custom-translate.service';
 
 @Component({
     selector: 'app-projects',
@@ -15,16 +15,16 @@ import { CustomTranslateService } from '../../services/custom-translate.service'
     styleUrls: ['./projects.component.scss', './additional.scss'],
     imports: [CarouselModule, TagModule, PrimaryButtonComponent, TranslateModule]
 })
-export class ProjectsComponent  implements OnInit{
+export class ProjectsComponent implements OnInit {
     router: Router = inject(Router);
     projectService = inject(ProjectsService);
     projects!: ProjectDTO[];
-    
+
     customTranslateService: CustomTranslateService = inject(CustomTranslateService);
-    lang!:string;
-    ngOnInit() : void {
+    lang!: string;
+    ngOnInit(): void {
         this.projects = this.projectService.getAll();
-        this.customTranslateService.getLangObservable().subscribe(newLang=>{
+        this.customTranslateService.getLangObservable().subscribe(newLang => {
             this.lang = newLang;
         }
         )
@@ -66,6 +66,6 @@ export class ProjectsComponent  implements OnInit{
     }
 
     navigateToDetail(id: string) {
-        this.router.navigate(['/projects' , id]);
+        this.router.navigate(['/projects', id]);
     }
 }

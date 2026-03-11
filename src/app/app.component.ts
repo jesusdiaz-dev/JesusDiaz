@@ -2,7 +2,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './components/commons/header/header.component';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
-import { CustomTranslateService } from './services/custom-translate.service';
+import { CustomTranslateService } from './services/custom-translate/custom-translate.service';
 import * as AOS from 'aos';
 
 
