@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 // @import "../src/_media-queries";
+@use '@angular/material' as mat;
 @import "./media-queries";
 @import "aos/dist/aos.css";
 
@@ -229,4 +230,29 @@ h4 {
 .primary_button_disabled:hover {
   box-shadow: none;
   background-image: linear-gradient(160deg, $primary-200 20%, $primary-300 150%);
+}
+
+
+
+
+// [data-aos] {
+//   pointer-events: none;
+// }
+
+// .aos-animate {
+//   pointer-events: auto;
+// }
+
+// .aos-init[data-aos][data-aos].aos-animate {
+//   transform: unset;
+// }
+
+
+
+
+:root {
+  @include mat.dialog-overrides(( // This is the token for border-radius
+      container-shape: 28px,
+      container-color: white,
+    ));
 }

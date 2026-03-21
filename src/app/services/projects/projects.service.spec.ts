@@ -16,7 +16,7 @@ describe('ProjectsService', () => {
 
     // FORCE the service to use our mock data instead of the real hardcoded array
     // @ts-ignore (to access private/protected if needed) or simply:
-    (service as any).projects = mockProjects; //~ TODO: ver que es esto
+    service.projects = mockProjects; //~ TODO: ver que es esto
   });
 
   it('should be created', () => {

@@ -1,10 +1,27 @@
-<div class="overlay">
+<!-- <div class="overlay">
     <div class="modal_container">
         <span class="modal_close_button" (click)="closeModal()">&times;</span>
         <div class="modal_info">
             @for (sentence of getMessageLines(); track $index) {
                 <p>{{sentence}}</p>
             }
+        </div>
+    </div>
+</div> -->
+
+<div class="overlay" (click)="closeModal()">
+    <div class="modal_container" (click)="$event.stopPropagation()">
+        <button class="modal_close_button" (click)="closeModal()" aria-label="Close">&times;</button>
+
+        <div class="modal_info">
+            <div class="modal_icon">✨</div>
+            @for (sentence of getMessageLines(); track $index) {
+            <p class="modal_text">{{sentence}}</p>
+            }
+        </div>
+
+        <div class="modal_footer">
+            <button class="btn_primary" (click)="closeModal()">Entendido</button>
         </div>
     </div>
 </div>

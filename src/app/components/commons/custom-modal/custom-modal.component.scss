@@ -2,51 +2,83 @@
 @import '../../../../styles.scss';
 
 /* Estilos para el overlay */
+// Modal
 .overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(81, 81, 81, 0.5); /* Fondo negro semi-transparente */
-    // display: none; /* Ocultar inicialmente */
-    z-index: 999; /* Asegúrate de que el overlay esté por encima del resto del contenido */
-  }
-  
-  /* Estilos para el modal */
-  .modal_container {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: $primary-100;
-    border-radius: 5px;
-    z-index: 1000; 
-    display: relative;
-    padding: 0px 40px 30px;
-    width: min(80% , 400px);
-    font: $mob-normal;
-  }
-  
-  /* Estilos para el botón de cerrar */
-  .modal_close_button {
-    position: absolute;
-    right: 10px;
-    top: 5px;
-    color: #003c56;
-    font-size: 30px;
-    font-weight: bold;
-    cursor: pointer;
-    line-height: 1;
-  }
-  
-  .modal_close_button:hover,
-  .modal_close_button:focus {
-    color: black;
-    text-decoration: none;
-  }
+    inset: 0; // Atajo moderno para top, left, right, bottom: 0
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px); // Efecto esmerilado (vidrio)
+    z-index: 999;
+    display: grid; // Centrado moderno
+    place-items: center;
+    animation: fadeIn 0.3s ease-out;
+}
 
-  .modal_info{
-    padding-top: 40px;
+.modal_container {
+    background-color: #ffffff;
+    border-radius: 16px; // Bordes más redondeados son más "amigables"
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    padding: 2rem;
+    width: min(90%, 450px);
+    position: relative;
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal_close_button {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    background: #f3f4f6; // Fondo sutil para el botón
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+        background: #e5e7eb;
+        transform: rotate(90deg);
+    }
+}
+
+.modal_info {
     text-align: center;
-  }
+
+    .modal_icon {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    .modal_text {
+        color: #4b5563;
+        line-height: 1.6;
+        margin-bottom: 0.5rem;
+    }
+}
+
+/* Animaciones para el toque profesional */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

@@ -30,9 +30,9 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     AOS.init({
       duration: 1000,
-      once: false,
-      mirror: true,
-      offset: 300
+      once: true, // Necesario para que funcionen los modales, evita que se oculten las secciones al hacer scroll up.
+      // mirror: true,
+      // offset: 300
     });
   }
 

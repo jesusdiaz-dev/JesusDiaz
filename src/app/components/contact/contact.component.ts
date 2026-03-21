@@ -5,9 +5,12 @@ import { MatInputModule } from '@angular/material/input';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactServiceService } from '../../services/contact/contact-service.service';
 import { CommonModule, JsonPipe, NgClass } from '@angular/common';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { EmailJSResponseStatus } from '@emailjs/browser';
 import { CustomModalComponent } from "../commons/custom-modal/custom-modal.component";
+import { MatDialog } from '@angular/material/dialog';
+import { ConfirmDialogComponent } from '../commons/dialogs/confirm-dialog/confirm-dialog.component';
+import { DialogService } from '../../services/dialog/dialog.service';
 
 
 @Component({
@@ -21,6 +24,8 @@ export class ContactComponent {
 
 
   private service = inject(ContactServiceService);
+  private dialogService = inject(DialogService);
+  private translate = inject(TranslateService);
   private fb = inject(FormBuilder);
 
   form: FormGroup = this.fb.group({
@@ -31,14 +36,9 @@ export class ContactComponent {
     message: '',
   });
 
-  sendWithoutErrors!: boolean;
-  success_message: boolean = false;
-  there_was_an_error!: boolean;
-
   async send() {
 
     if (this.form.invalid) {
-      this.success_message = true;
       return;
     }
 
@@ -49,26 +49,21 @@ export class ContactComponent {
       subject: this.form.value.subject,
       message: this.form.value.message,
     }
+    this.dialogService.showNotification(
+      this.translate.instant('Esoooo'),
+      this.translate.instant('home.contact.send_to_modal.success'),
+      'success');
+    // this.service.send(data).subscribe({
+    //   next: () => {
+    //     this.dialogService.showNotification(this.translate.instant('home.contact.send_to_modal.success'), 'success');
+    //     this.form.reset();
+    //   },
+    //   error: () => {
+    //     this.dialogService.showNotification(this.translate.instant('home.contact.send_to_modal.error'), 'error');
+    //     this.form.reset();
+    //   }
+    // });
 
-    try {
-      const response = <EmailJSResponseStatus>await this.service.send(data);
-      if (response.status === 200) {
-        this.success_message = true;
-        this.form.reset();
-      }
-      else {
-        this.there_was_an_error = true;
-        this.form.reset();
-      }
-    } catch (error) {
-      this.there_was_an_error = true;
-    }
-  }
-
-
-  closeModal() {
-    this.success_message = false;
-    this.there_was_an_error = false;
   }
 
   hasErrors(controlName: string, errorType: string) {

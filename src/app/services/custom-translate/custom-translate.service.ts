@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Type } from '@angular/core';
 import { BehaviorSubject, Observable, of } from 'rxjs';
 
 @Injectable({
@@ -6,16 +6,19 @@ import { BehaviorSubject, Observable, of } from 'rxjs';
 })
 export class CustomTranslateService {
 
- 
-  private langSubject: BehaviorSubject<string> = new BehaviorSubject<string>('es');
+  
+  private langSubject: BehaviorSubject<allowedLang> = new BehaviorSubject<allowedLang>('es');
 
   constructor() { }
 
-  changeLang(newLang: string): void {
+  changeLang(newLang: allowedLang): void {
     this.langSubject.next(newLang);
   }
 
-  getLangObservable(): Observable<string> {
+  getLangObservable(): Observable<allowedLang> {
     return this.langSubject.asObservable();
   }
 }
+
+export type allowedLang = 'es' | 'en';
+
